@@ -109,6 +109,15 @@ export default {
         )
       }
     }
+  },
+  watch: {
+    passTwo: function() {
+      if (this.passOne !== '' && this.passTwo !== '' && this.passTwo !== this.passOne) {
+        this.error = 'passwords must match'
+      } else {
+        this.error = null
+      }
+    }
   }
 }
 </script>
